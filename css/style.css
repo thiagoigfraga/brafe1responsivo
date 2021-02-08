@@ -91,7 +91,7 @@ nav ul a {
 .intro-bg {
   max-width: 100%;
   height: 460px;
-  background: url("img/bg-intro.jpg") no-repeat center center;
+  background: url("../img/bg-intro.jpg") no-repeat center center;
   background-size: cover;
   text-align: center;
   padding: 150px 0;
