@@ -1,0 +1,388 @@
+//fontes
+
+$fonte-principal: "Georgia", serif;
+
+//cores [estilo]
+
+$cinza_escuro: #252525;
+$baunilha: #e7e4d8;
+$baunilha-medio: #d6d3c8;
+$branco: #ffffff;
+
+//cores do cafe
+
+$cor-paulista: #492901;
+$cor-carioca: #c17139;
+$cor-mineiro: #d7a54d;
+$l-device: 1200px;
+$m-device: 740px;
+$s-device: 480px;
+
+/* Reset e configs*/
+
+@mixin d($size) {
+  @if $size == l {
+    @media screen and (min-width: #{$l-device}) {
+      @content;
+    }
+  } @else if $size == m {
+    @media screen and (min-width: #{$m-device}) and (max-width: #{$l-device - 1}) {
+      @content;
+    }
+  } @else if $size == s {
+    @media screen and (max-width: #{$m-device - 1}) {
+      @content;
+    }
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+  text-decoration: none;
+  font-family: $fonte-principal;
+  color: $cinza_escuro;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+//mixin limpeza
+@mixin clearfix {
+  &::after,
+  &::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+//mixins
+
+@mixin margin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0px auto;
+  @include clearfix;
+  @include d(s) {
+    width: 300px;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+//header
+.header {
+  background-color: $cinza_escuro;
+
+  .container {
+    padding: 15px 0;
+  }
+  .brafe-logo {
+    @include margin;
+    display: block;
+    width: 300px;
+    float: left;
+    @include d(s) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+}
+nav {
+  @include margin;
+  @include d(s) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  ul {
+    float: right;
+    @include d(s) {
+      float: none;
+    }
+    li {
+      display: inline-block;
+    }
+    a {
+      margin-left: 10px;
+      color: $branco;
+      font-size: 1.125em;
+      padding: 10px;
+      display: block;
+      @include d(s) {
+        margin-left: 0px;
+        padding: 10px 2px;
+      }
+    }
+  }
+}
+//intro-bg
+.intro-bg {
+  max-width: 100%;
+  height: 460px;
+  background: url(/img/bg-intro.jpg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 150px 0;
+  @include d(s) {
+    padding: 60px 0;
+    height: auto;
+  }
+  h1 {
+    color: $branco;
+    font-size: 3em;
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 4px;
+      background: $branco;
+      margin: 10px auto;
+    }
+  }
+  p {
+    font-size: 1.125em;
+    color: $branco;
+    font-style: italic;
+  }
+}
+
+//sobre
+
+.sobre {
+  padding: 60px 0;
+  h2 {
+    text-align: center;
+    font-size: 2.25em;
+    margin-bottom: 60px;
+  }
+  p {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 460px;
+    font-size: 1.125em;
+    line-height: 1.4em;
+    font-style: italic;
+  }
+}
+
+.img-sobre {
+  float: left;
+  @include margin;
+  h3 {
+    color: $branco;
+    background: $cinza_escuro;
+    padding: 5px 0px 10px 0px;
+    font-size: 2.25em;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    width: 220px;
+    position: relative;
+    top: -25px;
+  }
+  @include d(s) {
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+//tipos cafe
+
+.tipo-cafe {
+  background: $baunilha;
+  border-top: 3px solid $baunilha-medio;
+  border-bottom: 3px solid $baunilha-medio;
+  padding: 60px 0;
+}
+.cafe-box {
+  max-width: 300px;
+  float: left;
+  margin-bottom: 40px;
+  @include margin;
+  h2 {
+    font-size: 2.25em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 0.875em;
+    line-height: 1.4em;
+  }
+  @include d(s) {
+    float: none;
+    margin: 0px auto;
+    padding-bottom: 40px;
+  }
+}
+
+.cafe-paulista {
+  &::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background-color: $cor-paulista;
+    box-shadow: 0px 0px 0px 5px $baunilha, 0px 0px 0px 10px $cor-paulista;
+  }
+}
+.cafe-carioca {
+  &::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background-color: $cor-carioca;
+    box-shadow: 0px 0px 0px 5px $baunilha, 0px 0px 0px 10px $cor-carioca;
+  }
+}
+.cafe-mineiro {
+  &::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background-color: $cor-mineiro;
+    box-shadow: 0px 0px 0px 5px $baunilha, 0px 0px 0px 10px $cor-mineiro;
+  }
+}
+
+.btn {
+  margin: 0 auto;
+  display: block;
+  width: 180px;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 15px 0;
+  text-align: center;
+  border: 3px solid $cinza_escuro;
+}
+
+//locais
+.locais {
+  padding: 60px 0;
+}
+.loja-brafe {
+  margin-bottom: 40px;
+}
+.brafe-img {
+  max-width: 460px;
+  float: left;
+  @include margin;
+}
+.info-loja {
+  max-width: 460px;
+  float: left;
+  @include margin;
+  h2 {
+    font-size: 2.25em;
+    margin-bottom: 20px;
+  }
+  p {
+    max-width: 320px;
+    font-size: 1.125em;
+    line-height: 1.4em;
+    margin-bottom: 40px;
+  }
+  a {
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 10px 20px;
+    text-align: center;
+    border: 3px solid $cinza_escuro;
+  }
+}
+
+/*quebra*/
+
+.quebra {
+  background: $baunilha;
+  padding: 30px 0;
+}
+.assine {
+  .call {
+    max-width: 460px;
+    float: left;
+    @include margin;
+  }
+  h2 {
+    font-size: 2.25em;
+  }
+  p {
+    font-size: 1.5em;
+    font-style: italic;
+  }
+  form {
+    width: 460px;
+    @include margin;
+    float: left;
+    @include d(s) {
+      float: none;
+      max-width: 300px;
+    }
+    label {
+      display: none;
+    }
+    input {
+      width: 320px;
+      padding: 10px;
+      background: transparent;
+      border: 3px solid $cinza_escuro;
+      font-size: 1.5em;
+      font-style: italic;
+      float: left;
+      @include d(s) {
+        width: 160px;
+        float: left;
+      }
+    }
+    button {
+      width: 140px;
+      border: none;
+      background: $cinza_escuro;
+      color: $branco;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      padding: 13px 0;
+      cursor: pointer;
+    }
+  }
+}
+.footer {
+  padding: 40px 0;
+  font-size: 1.125em;
+  line-height: 1.5em;
+  background: $baunilha-medio;
+  p {
+    float: left;
+    @include margin;
+    @include d(s) {
+      float: none;
+      margin-bottom: 20px;
+    }
+  }
+  img {
+    float: right;
+    @include margin;
+    @include d(s) {
+      float: none;
+    }
+  }
+}

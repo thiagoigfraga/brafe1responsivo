@@ -1,0 +1,367 @@
+/* Reset e configs*/
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+  text-decoration: none;
+  font-family: "Georgia", serif;
+  color: #252525;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0px auto;
+}
+.container::after, .container::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 739px) {
+  .container {
+    width: 300px;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+.header {
+  background-color: #252525;
+}
+.header .container {
+  padding: 15px 0;
+}
+.header .brafe-logo {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  width: 300px;
+  float: left;
+}
+@media screen and (max-width: 739px) {
+  .header .brafe-logo {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+nav {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 739px) {
+  nav {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+nav ul {
+  float: right;
+}
+@media screen and (max-width: 739px) {
+  nav ul {
+    float: none;
+  }
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul a {
+  margin-left: 10px;
+  color: #ffffff;
+  font-size: 1.125em;
+  padding: 10px;
+  display: block;
+}
+@media screen and (max-width: 739px) {
+  nav ul a {
+    margin-left: 0px;
+    padding: 10px 2px;
+  }
+}
+
+.intro-bg {
+  max-width: 100%;
+  height: 460px;
+  background: url(/img/bg-intro.jpg) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 150px 0;
+}
+@media screen and (max-width: 739px) {
+  .intro-bg {
+    padding: 60px 0;
+    height: auto;
+  }
+}
+.intro-bg h1 {
+  color: #ffffff;
+  font-size: 3em;
+}
+.intro-bg h1::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 4px;
+  background: #ffffff;
+  margin: 10px auto;
+}
+.intro-bg p {
+  font-size: 1.125em;
+  color: #ffffff;
+  font-style: italic;
+}
+
+.sobre {
+  padding: 60px 0;
+}
+.sobre h2 {
+  text-align: center;
+  font-size: 2.25em;
+  margin-bottom: 60px;
+}
+.sobre p {
+  margin: 20px auto;
+  text-align: center;
+  max-width: 460px;
+  font-size: 1.125em;
+  line-height: 1.4em;
+  font-style: italic;
+}
+
+.img-sobre {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.img-sobre h3 {
+  color: #ffffff;
+  background: #252525;
+  padding: 5px 0px 10px 0px;
+  font-size: 2.25em;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  width: 220px;
+  position: relative;
+  top: -25px;
+}
+@media screen and (max-width: 739px) {
+  .img-sobre {
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.tipo-cafe {
+  background: #e7e4d8;
+  border-top: 3px solid #d6d3c8;
+  border-bottom: 3px solid #d6d3c8;
+  padding: 60px 0;
+}
+
+.cafe-box {
+  max-width: 300px;
+  float: left;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.cafe-box h2 {
+  font-size: 2.25em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cafe-box p {
+  font-size: 0.875em;
+  line-height: 1.4em;
+}
+@media screen and (max-width: 739px) {
+  .cafe-box {
+    float: none;
+    margin: 0px auto;
+    padding-bottom: 40px;
+  }
+}
+
+.cafe-paulista::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background-color: #492901;
+  box-shadow: 0px 0px 0px 5px #e7e4d8, 0px 0px 0px 10px #492901;
+}
+
+.cafe-carioca::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background-color: #c17139;
+  box-shadow: 0px 0px 0px 5px #e7e4d8, 0px 0px 0px 10px #c17139;
+}
+
+.cafe-mineiro::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background-color: #d7a54d;
+  box-shadow: 0px 0px 0px 5px #e7e4d8, 0px 0px 0px 10px #d7a54d;
+}
+
+.btn {
+  margin: 0 auto;
+  display: block;
+  width: 180px;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 15px 0;
+  text-align: center;
+  border: 3px solid #252525;
+}
+
+.locais {
+  padding: 60px 0;
+}
+
+.loja-brafe {
+  margin-bottom: 40px;
+}
+
+.brafe-img {
+  max-width: 460px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.info-loja {
+  max-width: 460px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.info-loja h2 {
+  font-size: 2.25em;
+  margin-bottom: 20px;
+}
+.info-loja p {
+  max-width: 320px;
+  font-size: 1.125em;
+  line-height: 1.4em;
+  margin-bottom: 40px;
+}
+.info-loja a {
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 10px 20px;
+  text-align: center;
+  border: 3px solid #252525;
+}
+
+/*quebra*/
+.quebra {
+  background: #e7e4d8;
+  padding: 30px 0;
+}
+
+.assine .call {
+  max-width: 460px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.assine h2 {
+  font-size: 2.25em;
+}
+.assine p {
+  font-size: 1.5em;
+  font-style: italic;
+}
+.assine form {
+  width: 460px;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+}
+@media screen and (max-width: 739px) {
+  .assine form {
+    float: none;
+    max-width: 300px;
+  }
+}
+.assine form label {
+  display: none;
+}
+.assine form input {
+  width: 320px;
+  padding: 10px;
+  background: transparent;
+  border: 3px solid #252525;
+  font-size: 1.5em;
+  font-style: italic;
+  float: left;
+}
+@media screen and (max-width: 739px) {
+  .assine form input {
+    width: 160px;
+    float: left;
+  }
+}
+.assine form button {
+  width: 140px;
+  border: none;
+  background: #252525;
+  color: #ffffff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 13px 0;
+  cursor: pointer;
+}
+
+.footer {
+  padding: 40px 0;
+  font-size: 1.125em;
+  line-height: 1.5em;
+  background: #d6d3c8;
+}
+.footer p {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 739px) {
+  .footer p {
+    float: none;
+    margin-bottom: 20px;
+  }
+}
+.footer img {
+  float: right;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 739px) {
+  .footer img {
+    float: none;
+  }
+}
